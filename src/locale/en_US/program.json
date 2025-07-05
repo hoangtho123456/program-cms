@@ -1,0 +1,19 @@
+{
+  "programs": "Programs",
+  "columns": {
+    "programName": "Program name",
+    "duration": "Time (hour)",
+    "price": "Price",
+    "format": "Format",
+    "language": "Language",
+    "certification": "Certification",
+    "componentBlock": "Block"
+  },
+  "prerequisites": "Prerequisites",
+  "assets": "Assets",
+  "uploadDocument": "Upload the file",
+  "addProgram": "Add a program",
+  "presentation": "Presentation",
+  "limitSize": "PDF format, maximum file size : %{limit}MB",
+  "category": "Category"
+}

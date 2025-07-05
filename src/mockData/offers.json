@@ -1,0 +1,107 @@
+{
+  "total": 10,
+  "totalPages": 2,
+  "currentPage": 1,
+  "list": [
+    {
+      "id": 1,
+      "code": "A123",
+      "postTitle": "Software Engineer",
+      "companyName": "Tech Corp",
+      "format": "Full-Time",
+      "email": "hr@techcorp.com",
+      "status": 0,
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida fermentum odio nec rutrum. Suspendisse rhoncus lectus ac nisi rhoncus auctor. Morbi justo ipsum, consectetur non urna at, fringilla faucibus odio. Curabitur fringilla molestie dapibus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet fringilla vulputate. Mauris lobortis malesuada purus id dignissim. Cras non dolor nec dui imperdiet suscipit tempor a felis.</p><p>Vivamus et orci a tortor luctus pretium. Suspendisse nisi neque, luctus a justo malesuada, ullamcorper condimentum turpis. In posuere libero lorem, ut tempor turpis pretium quis. Aenean mollis, odio et venenatis tempus, dolor neque venenatis risus, et sagittis lorem est vitae nunc. Duis turpis nulla, porttitor at luctus eget, lobortis a ex. Vestibulum a mattis neque. Vestibulum ipsum justo, fringilla ut dapibus in, lobortis at lectus. Aenean ornare odio purus, a rutrum nibh efficitur vitae. Donec vel metus dapibus turpis lacinia gravida molestie lacinia nulla. Pellentesque ac laoreet nisi.</p>"
+    },
+    {
+      "id": 2,
+      "code": "B456",
+      "postTitle": "Frontend Developer",
+      "companyName": "Web Solutions",
+      "format": "Contract",
+      "email": "contact@websolutions.com",
+      "status": 0,
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida fermentum odio nec rutrum. Suspendisse rhoncus lectus ac nisi rhoncus auctor. Morbi justo ipsum, consectetur non urna at, fringilla faucibus odio. Curabitur fringilla molestie dapibus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p><p>Vivamus et orci a tortor luctus pretium. Suspendisse nisi neque, luctus a justo malesuada, ullamcorper condimentum turpis. In posuere libero lorem, ut tempor turpis pretium quis. Aenean mollis, odio et venenatis tempus, dolor neque venenatis risus, et sagittis lorem est vitae nunc. Duis turpis nulla, porttitor at luctus eget, lobortis a ex. Vestibulum a mattis neque. Vestibulum ipsum justo, fringilla ut dapibus in, lobortis at lectus. Aenean ornare odio purus, a rutrum nibh efficitur vitae. Donec vel metus dapibus turpis lacinia gravida molestie lacinia nulla. Pellentesque ac laoreet nisi.</p>"
+    },
+    {
+      "id": 3,
+      "code": "C789",
+      "postTitle": "Backend Developer",
+      "companyName": "Cloud Systems",
+      "format": "Remote",
+      "email": "jobs@cloudsystems.com",
+      "status": 0,
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida fermentum odio nec rutrum. Suspendisse rhoncus lectus ac nisi rhoncus auctor. Morbi justo ipsum, consectetur non urna at, fringilla faucibus odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet fringilla vulputate. Mauris lobortis malesuada purus id dignissim. Cras non dolor nec dui imperdiet suscipit tempor a felis.</p><p>Vivamus et orci a tortor luctus pretium. Suspendisse nisi neque, luctus a justo malesuada. In posuere libero lorem, ut tempor turpis pretium quis. Aenean mollis, odio et venenatis tempus, dolor neque venenatis risus, et sagittis lorem est vitae nunc. Duis turpis nulla, porttitor at luctus eget, lobortis a ex. Vestibulum a mattis neque. Vestibulum ipsum justo, fringilla ut dapibus in, lobortis at lectus. Aenean ornare odio purus, a rutrum nibh efficitur vitae. Donec vel metus dapibus turpis lacinia gravida molestie lacinia nulla. Pellentesque ac laoreet nisi.</p>"
+    },
+    {
+      "id": 4,
+      "code": "D234",
+      "postTitle": "UI/UX Designer",
+      "companyName": "Creative Minds",
+      "format": "Full-Time",
+      "email": "design@creativeminds.com",
+      "status": 0,
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida fermentum odio nec rutrum. Suspendisse rhoncus lectus ac nisi rhoncus auctor. Morbi justo ipsum, consectetur non urna at, fringilla faucibus odio. Curabitur fringilla molestie dapibus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet fringilla vulputate. Mauris lobortis malesuada purus id dignissim. Cras non dolor nec dui imperdiet suscipit tempor a felis.</p><p>Vivamus et orci a tortor luctus pretium. Suspendisse nisi neque, luctus a justo malesuada, ullamcorper condimentum turpis. In posuere libero lorem, ut tempor turpis pretium quis. Aenean mollis, odio et venenatis tempus, dolor neque venenatis risus, et sagittis lorem est vitae nunc. Duis turpis nulla, porttitor at luctus eget, lobortis a ex. Vestibulum a mattis neque. Vestibulum ipsum justo, fringilla ut dapibus in, lobortis at lectus. Aenean ornare odio purus, a rutrum nibh efficitur vitae. Donec vel metus dapibus turpis lacinia gravida molestie lacinia nulla.</p>"
+    },
+    {
+      "id": 5,
+      "code": "E567",
+      "postTitle": "Data Analyst",
+      "companyName": "Data Corp",
+      "format": "Part-Time",
+      "email": "info@datacorp.com",
+      "status": 0,
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida fermentum odio nec rutrum. Suspendisse rhoncus lectus ac nisi rhoncus auctor. Morbi justo ipsum, consectetur non urna at, fringilla faucibus odio. Curabitur fringilla molestie dapibus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet fringilla vulputate. Mauris lobortis malesuada purus id dignissim. Cras non dolor nec dui imperdiet suscipit tempor a felis.</p><p>Vivamus et orci a tortor luctus pretium. Suspendisse nisi neque, luctus a justo malesuada, ullamcorper condimentum turpis. In posuere libero lorem, ut tempor turpis pretium quis. Aenean mollis, odio et venenatis tempus, dolor neque venenatis risus, et sagittis lorem est vitae nunc. Duis turpis nulla, porttitor at luctus eget, lobortis a ex. Donec vel metus dapibus turpis lacinia gravida molestie lacinia nulla. Pellentesque ac laoreet nisi.</p>"
+    },
+    {
+      "id": 6,
+      "code": "F890",
+      "postTitle": "Project Manager",
+      "companyName": "Agile Solutions",
+      "format": "Full-Time",
+      "email": "careers@agilesolutions.com",
+      "status": 0,
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida fermentum odio nec rutrum. Suspendisse rhoncus lectus ac nisi rhoncus auctor. Morbi justo ipsum, consectetur non urna at, fringilla faucibus odio. Curabitur fringilla molestie dapibus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet fringilla vulputate. Mauris lobortis malesuada purus id dignissim. Cras non dolor nec dui imperdiet suscipit tempor a felis.</p><p>Vivamus et orci a tortor luctus pretium. Suspendisse nisi neque, luctus a justo malesuada, ullamcorper condimentum turpis. Vestibulum a mattis neque. Vestibulum ipsum justo, fringilla ut dapibus in, lobortis at lectus. Aenean ornare odio purus, a rutrum nibh efficitur vitae. Donec vel metus dapibus turpis lacinia gravida molestie lacinia nulla. Pellentesque ac laoreet nisi.</p>"
+    },
+    {
+      "id": 7,
+      "code": "G135",
+      "postTitle": "DevOps Engineer",
+      "companyName": "Cloud Native",
+      "format": "Remote",
+      "email": "devops@cloudnative.com",
+      "status": 0,
+      "description": "<p>Vestibulum gravida fermentum odio nec rutrum. Suspendisse rhoncus lectus ac nisi rhoncus auctor. Morbi justo ipsum, consectetur non urna at, fringilla faucibus odio. Curabitur fringilla molestie dapibus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet fringilla vulputate. Mauris lobortis malesuada purus id dignissim. Cras non dolor nec dui imperdiet suscipit tempor a felis.</p><p>Vivamus et orci a tortor luctus pretium. Suspendisse nisi neque, luctus a justo malesuada, ullamcorper condimentum turpis. In posuere libero lorem, ut tempor turpis pretium quis. Aenean mollis, odio et venenatis tempus, dolor neque venenatis risus, et sagittis lorem est vitae nunc. Duis turpis nulla, porttitor at luctus eget, lobortis a ex. Vestibulum a mattis neque. Vestibulum ipsum justo, fringilla ut dapibus in, lobortis at lectus. Aenean ornare odio purus, a rutrum nibh efficitur vitae. Donec vel metus dapibus turpis lacinia gravida molestie lacinia nulla. Pellentesque ac laoreet nisi.</p>"
+    },
+    {
+      "id": 8,
+      "code": "H246",
+      "postTitle": "QA Tester",
+      "companyName": "Quality First",
+      "format": "Contract",
+      "email": "qa@qualityfirst.com",
+      "status": 0,
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida fermentum odio nec rutrum. Suspendisse rhoncus lectus ac nisi rhoncus auctor. Morbi justo ipsum, consectetur non urna at, fringilla faucibus odio. Curabitur fringilla molestie dapibus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet fringilla vulputate. Mauris lobortis malesuada purus id dignissim. Cras non dolor nec dui imperdiet suscipit tempor a felis.</p><p>Aenean mollis, odio et venenatis tempus, dolor neque venenatis risus, et sagittis lorem est vitae nunc. Duis turpis nulla, porttitor at luctus eget, lobortis a ex. Vestibulum a mattis neque. Vestibulum ipsum justo, fringilla ut dapibus in, lobortis at lectus. Aenean ornare odio purus, a rutrum nibh efficitur vitae. Donec vel metus dapibus turpis lacinia gravida molestie lacinia nulla. Pellentesque ac laoreet nisi.</p>"
+    },
+    {
+      "id": 9,
+      "code": "I357",
+      "postTitle": "Business Analyst",
+      "companyName": "Finance Group",
+      "format": "Full-Time",
+      "email": "ba@financegroup.com",
+      "status": 0,
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida fermentum odio nec rutrum. Suspendisse rhoncus lectus ac nisi rhoncus auctor. Morbi justo ipsum, consectetur non urna at, fringilla faucibus odio. Curabitur fringilla molestie dapibus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet fringilla vulputate.</p><p>Vivamus et orci a tortor luctus pretium. Suspendisse nisi neque, luctus a justo malesuada, ullamcorper condimentum turpis. In posuere libero lorem, ut tempor turpis pretium quis. Aenean mollis, odio et venenatis tempus, dolor neque venenatis risus, et sagittis lorem est vitae nunc. Duis turpis nulla, porttitor at luctus eget, lobortis a ex. Vestibulum a mattis neque. Vestibulum ipsum justo, fringilla ut dapibus in, lobortis at lectus. Aenean ornare odio purus, a rutrum nibh efficitur vitae. Donec vel metus dapibus turpis lacinia gravida molestie lacinia nulla. Pellentesque ac laoreet nisi.</p>"
+    },
+    {
+      "id": 10,
+      "code": "J468",
+      "postTitle": "Cybersecurity Specialist",
+      "companyName": "SecureTech",
+      "format": "Remote",
+      "email": "security@securetech.com",
+      "status": 0,
+      "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum gravida fermentum odio nec rutrum. Suspendisse rhoncus lectus ac nisi rhoncus auctor. Morbi justo ipsum, consectetur non urna at, fringilla faucibus odio. Curabitur fringilla molestie dapibus. Aliquam erat volutpat. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Proin laoreet fringilla vulputate. Mauris lobortis malesuada purus id dignissim. Cras non dolor nec dui imperdiet suscipit tempor a felis.</p><p>Vivamus et orci a tortor luctus pretium. Suspendisse nisi neque, luctus a justo malesuada, ullamcorper condimentum turpis. In posuere libero lorem, ut tempor turpis pretium quis. Aenean mollis, odio et venenatis tempus, dolor neque venenatis risus, et sagittis lorem est vitae nunc. Duis turpis nulla, porttitor at luctus eget, lobortis a ex. Vestibulum a mattis neque.</p>"
+    }
+  ]
+}

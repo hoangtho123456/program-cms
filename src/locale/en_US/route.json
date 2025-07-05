@@ -1,0 +1,28 @@
+{
+  "news": {
+    "base": "News",
+    "aNews": "a news",
+    "title": "Title of the news",
+    "description": "Brief description"
+  },
+  "programs": {
+    "base": "Program",
+    "programName": "Program name"
+  },
+  "jobBoard": {
+    "base": "Job board",
+    "offers": "Offers",
+    "candidates": "Candidates",
+    "captionSkills": "skill(s) selected"
+  },
+  "dashboard": {
+    "base": "Dashboard"
+  },
+  "admin": {
+    "base": "Admin",
+    "roles": "Roles",
+    "adminList": "List of administrator",
+    "addAdmin": "Add an administrator",
+    "editAdmin": "Edit an administrator"
+  }
+}

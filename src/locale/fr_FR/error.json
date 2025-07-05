@@ -1,0 +1,20 @@
+{
+  "base": "errors",
+  "requiredField": "Champ requis",
+  "minLength": "Au moins {number} caractères",
+  "maxLength": "Au maximum {number} caractères",
+  "minNumber": "Le nombre doit être supérieur à {number}",
+  "maxNumber": "Le nombre doit être inférieur à {number}",
+  "invalidEmail": "Email invalide",
+  "emailNotExists": "Cet e-mail n'existe pas",
+  "nameExists": "Ce nom existe déjà",
+  "verifyExpired": "Vérification expirée",
+  "verifyFailed": "Vérification échouée",
+  "loginFailed": "Connexion échouée",
+  "invalidToken": "Jeton invalide",
+  "invalidDate": "Date invalide (ex : JJ-MM-AAAA)",
+  "duplicate": "Dupliquer",
+  "duplicateName": "Nom en double",
+  "internalServerError": "Erreur interne du serveur",
+  "invalidUrl": "Invalid Link"
+}

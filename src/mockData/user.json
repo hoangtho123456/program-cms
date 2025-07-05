@@ -1,0 +1,26 @@
+{
+  "id": 2,
+  "email": "user@gmail.com",
+  "username": "user",
+  "token": "c1d4f8b7-2e3a-9a6e-5c10-a2b7e4f3d9c8",
+  "media": null,
+  "firstName": "Normal",
+  "lastName": "User",
+  "phone": null,
+  "gender": null,
+  "birthDay": null,
+  "birthPlace": null,
+  "country": null,
+  "subRoles": [
+    {
+      "id": 2,
+      "name": "User",
+      "isBaseRole": true,
+      "displayName": "Normal User"
+    }
+  ],
+  "status": null,
+  "createdDate": "2024-04-01T05:00:00+07:00",
+  "updatedDate": "2024-04-01T05:00:00+07:00",
+  "password": "test@123"
+}

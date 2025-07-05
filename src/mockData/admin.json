@@ -1,0 +1,26 @@
+{
+  "id": 1,
+  "email": "admin@gmail.com",
+  "username": "admin",
+  "token": "b4f8d3a2-7c1e-4e9b-9a25-f7d92b6c1a3e",
+  "media": null,
+  "firstName": "Super",
+  "lastName": "Admin",
+  "phone": null,
+  "gender": null,
+  "birthDay": null,
+  "birthPlace": null,
+  "country": null,
+  "status": 1,
+  "subRoles": [
+    {
+      "id": 1,
+      "name": "Administrator",
+      "isBaseRole": true,
+      "displayName": "Super Administrator"
+    }
+  ],
+  "createdDate": "2023-04-01T05:00:00+07:00",
+  "updatedDate": "2023-04-01T05:00:00+07:00",
+  "password": "test@123"
+}

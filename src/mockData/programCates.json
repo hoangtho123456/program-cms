@@ -1,0 +1,137 @@
+{
+  "total": 10,
+  "totalPages": 1,
+  "currentPage": 1,
+  "list": [
+    {
+      "id": 1,
+      "name": "Alpha",
+      "numberPrograms": 5,
+      "slug": "alpha",
+      "icon": {
+        "id": 101,
+        "name": "alpha_icon",
+        "type": "png",
+        "path": "https://placeholder.pics/svg/100x100/DEDEDE/555555/hello",
+        "size": 2048
+      }
+    },
+    {
+      "id": 2,
+      "name": "Beta",
+      "numberPrograms": 8,
+      "slug": "beta",
+      "icon": {
+        "id": 102,
+        "name": "beta_icon",
+        "type": "png",
+        "path": "https://placeholder.pics/svg/100x100/DEDEDE/555555/hello",
+        "size": 4096
+      }
+    },
+    {
+      "id": 3,
+      "name": "Gamma",
+      "numberPrograms": 6,
+      "slug": "gamma",
+      "icon": {
+        "id": 103,
+        "name": "gamma_icon",
+        "type": "png",
+        "path": "https://placeholder.pics/svg/100x100/DEDEDE/555555/hello",
+        "size": 1024
+      }
+    },
+    {
+      "id": 4,
+      "name": "Delta",
+      "numberPrograms": 7,
+      "slug": "delta",
+      "icon": {
+        "id": 104,
+        "name": "delta_icon",
+        "type": "png",
+        "path": "https://placeholder.pics/svg/100x100/DEDEDE/555555/hello",
+        "size": 512
+      }
+    },
+    {
+      "id": 5,
+      "name": "Epsilon",
+      "numberPrograms": 10,
+      "slug": "epsilon",
+      "icon": {
+        "id": 105,
+        "name": "epsilon_icon",
+        "type": "png",
+        "path": "https://placeholder.pics/svg/100x100/DEDEDE/555555/hello",
+        "size": 3072
+      }
+    },
+    {
+      "id": 6,
+      "name": "Zeta",
+      "numberPrograms": 3,
+      "slug": "zeta",
+      "icon": {
+        "id": 106,
+        "name": "zeta_icon",
+        "type": "png",
+        "path": "https://placeholder.pics/svg/100x100/DEDEDE/555555/hello",
+        "size": 2048
+      }
+    },
+    {
+      "id": 7,
+      "name": "Eta",
+      "numberPrograms": 9,
+      "slug": "eta",
+      "icon": {
+        "id": 107,
+        "name": "eta_icon",
+        "type": "png",
+        "path": "https://placeholder.pics/svg/100x100/DEDEDE/555555/hello",
+        "size": 4096
+      }
+    },
+    {
+      "id": 8,
+      "name": "Theta",
+      "numberPrograms": 4,
+      "slug": "theta",
+      "icon": {
+        "id": 108,
+        "name": "theta_icon",
+        "type": "png",
+        "path": "https://placeholder.pics/svg/100x100/DEDEDE/555555/hello",
+        "size": 1024
+      }
+    },
+    {
+      "id": 9,
+      "name": "Iota",
+      "numberPrograms": 6,
+      "slug": "iota",
+      "icon": {
+        "id": 109,
+        "name": "iota_icon",
+        "type": "png",
+        "path": "https://placeholder.pics/svg/100x100/DEDEDE/555555/hello",
+        "size": 512
+      }
+    },
+    {
+      "id": 10,
+      "name": "Kappa",
+      "numberPrograms": 12,
+      "slug": "kappa",
+      "icon": {
+        "id": 110,
+        "name": "kappa_icon",
+        "type": "png",
+        "path": "https://placeholder.pics/svg/100x100/DEDEDE/555555/hello",
+        "size": 3072
+      }
+    }
+  ]
+}

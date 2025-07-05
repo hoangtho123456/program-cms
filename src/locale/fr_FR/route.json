@@ -1,0 +1,28 @@
+{
+  "news": {
+    "base": "Actualités",
+    "aNews": "une actualité",
+    "title": "Titre de l'actualité",
+    "description": "Bref description"
+  },
+  "programs": {
+    "base": "Programme",
+    "programName": "Nom du programme"
+  },
+  "jobBoard": {
+    "base": "Job board",
+    "offers": "Offres",
+    "candidates": "Candidats",
+    "captionSkills": "compétence(s) sélectionnée(s)"
+  },
+  "dashboard": {
+    "base": "Tableau de bord"
+  },
+  "admin": {
+    "base": "Admin",
+    "roles": "Position",
+    "adminList": "Liste des utilisateurs",
+    "addAdmin": "Ajouter un utilisateur",
+    "editAdmin": "Modifier un utilisateur"
+  }
+}

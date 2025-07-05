@@ -1,0 +1,20 @@
+{
+  "base": "errors",
+  "requiredField": "Required Field",
+  "minLength": "At least {number} characters",
+  "maxLength": "At most {number} characters",
+  "minNumber": "Number must be more than {number}",
+  "maxNumber": "Number must be less than {number}",
+  "invalidEmail": "Invalid email",
+  "emailNotExists": "This email does not exists",
+  "nameExists": "This name already exists",
+  "verifyExpired": "Verify Expired",
+  "verifyFailed": "Verify Failed",
+  "loginFailed": "Login Failed",
+  "invalidToken": "Invalid Token",
+  "invalidDate": "Invalid date (ex: DD-MM-YYYY)",
+  "duplicate": "Duplicate",
+  "duplicateName": "Duplicate name",
+  "internalServerError": "Internal Server Error",
+  "invalidUrl": "Invalid Link"
+}

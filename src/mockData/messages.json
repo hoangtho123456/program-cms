@@ -1,0 +1,77 @@
+{
+  "total": 10,
+  "totalPages": 1,
+  "currentPage": 1,
+  "list": [
+    {
+      "id": 1,
+      "profile_id": 101,
+      "title": "New Message Received",
+      "subtitle": "You have a new message from John",
+      "isSeen": false
+    },
+    {
+      "id": 2,
+      "profile_id": 102,
+      "title": "Email Notification",
+      "subtitle": "Your email has been successfully sent",
+      "isSeen": true
+    },
+    {
+      "id": 3,
+      "profile_id": 103,
+      "title": "New Friend Request",
+      "subtitle": "Michael has sent you a friend request",
+      "isSeen": false
+    },
+    {
+      "id": 4,
+      "profile_id": 104,
+      "title": "Task Completed",
+      "subtitle": "Your task 'Project Report' has been completed",
+      "isSeen": true
+    },
+    {
+      "id": 5,
+      "profile_id": 105,
+      "title": "Order Confirmation",
+      "subtitle": "Your order #2345 has been placed successfully",
+      "isSeen": false
+    },
+    {
+      "id": 6,
+      "profile_id": 106,
+      "title": "Security Alert",
+      "subtitle": "New login detected from an unknown device",
+      "isSeen": false
+    },
+    {
+      "id": 7,
+      "profile_id": 107,
+      "title": "Upcoming Event",
+      "subtitle": "Reminder: Your meeting is scheduled for tomorrow",
+      "isSeen": true
+    },
+    {
+      "id": 8,
+      "profile_id": 108,
+      "title": "Special Offer",
+      "subtitle": "Get 20% off on your next purchase!",
+      "isSeen": false
+    },
+    {
+      "id": 9,
+      "profile_id": 109,
+      "title": "Settings Update",
+      "subtitle": "Your profile settings have been updated",
+      "isSeen": true
+    },
+    {
+      "id": 10,
+      "profile_id": 110,
+      "title": "Like Received",
+      "subtitle": "Someone liked your post!",
+      "isSeen": false
+    }
+  ]
+}

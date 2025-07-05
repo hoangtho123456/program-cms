@@ -1,0 +1,26 @@
+{
+  "id": 3,
+  "email": "editor@gmail.com",
+  "username": "editor",
+  "token": "a9e2f1c5-3d7b-4f6e-8a10-b5c8d4e2f9a3",
+  "media": null,
+  "firstName": "Test",
+  "lastName": "Editor",
+  "phone": null,
+  "gender": null,
+  "birthDay": null,
+  "birthPlace": null,
+  "country": null,
+  "subRoles": [
+    {
+      "id": 3,
+      "name": "Editor",
+      "isBaseRole": true,
+      "displayName": "Editor"
+    }
+  ],
+  "status": 0,
+  "createdDate": "2024-06-01T05:00:00+07:00",
+  "updatedDate": "2024-06-01T05:00:00+07:00",
+  "password": "test@123"
+}

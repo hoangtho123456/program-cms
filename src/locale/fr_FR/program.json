@@ -1,0 +1,19 @@
+{
+  "programs": "Programme(s)",
+  "columns": {
+    "programName": "Nom de program",
+    "duration": "Durée (heure)",
+    "price": "Prix",
+    "format": "Format",
+    "language": "Langue",
+    "certification": "Certification",
+    "componentBlock": "Bloc"
+  },
+  "prerequisites": "Pré-requis",
+  "assets": "Atouts",
+  "uploadDocument": "Télécharger la file",
+  "addProgram": "Ajouter une programme",
+  "presentation": "Présentation",
+  "limitSize": "Format PDF, la taille maximum du fichier : %{limit}MB",
+  "category": "Catégorie"
+}
