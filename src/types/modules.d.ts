@@ -1,0 +1,10 @@
+declare module '@/locale';
+declare module '@/utils';
+declare module '@/utils/*';
+declare module '@/router/*';
+declare module '@/services';
+declare module '@/stores';
+declare module '@/stores/*';
+declare module '@/mixins';
+declare module '@/mixins/*';
+declare module '@/services/*';

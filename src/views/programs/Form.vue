@@ -25,14 +25,33 @@
 		</div>
 	</div>
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import ProgramService from '@/services/ProgramService.js';
-import { META_FORM } from './formCore';
+import { META_FORM } from '@/views/programs/formCore';
 import ProgramForm from '@/components/forms/ProgramForm.vue';
 import BtnSubmit from '@/components/BtnSubmit.vue';
 import ProgramTab from './ProgramTab.vue';
 
-export default {
+interface IProgram {
+	id?: IDType;
+	name: string;
+	brochure?: {
+		id: IDType;
+		fileName?: string | NoneValue;
+	},
+}
+
+interface IProgramForm extends IProgram {
+	action: string;
+	brochure?: {
+		id: IDType;
+		name: string | NoneValue;
+	},
+	status: number;
+}
+
+export default Vue.extend({
 	components: {
 		BtnSubmit,
 		ProgramForm,
@@ -41,18 +60,18 @@ export default {
 	data: () => ({
 		loading: false,
 		allowedToSendMeta: false,
-		programForm: {},
+		programForm: {} as IProgramForm,
 		metaForm: JSON.parse(JSON.stringify(META_FORM))
 	}),
 	watch: {
 		'$route.params.id': {
 			immediate: true,
-			async handler(id) {
+			async handler(id: IDType) {
 				if (id) {
 					this.$store.commit('loadingShow');
 					const res = await ProgramService.detail(id);
 					if (res) {
-						this.programForm = this.getProgramData(res);
+						this.programForm = this.getProgramFormData(res);
 						this.allowedToSendMeta = true;
 						this.setMetaData(res);
 					}
@@ -62,11 +81,11 @@ export default {
 		},
 	},
 	methods: {
-		onCancel() {
+		onCancel(): void {
 			this.$router.go(-1);
 		},
-		setMetaData (val = {}) {
-			if (!Object.keys(val || {}).length) return false;
+		setMetaData (val:{[key:string]:any} = {}): void {
+			if (!Object.keys(val || {}).length) return;
 
 			const tempForm = structuredClone(this.metaForm);
 			for (const key of Object.keys(tempForm)) {
@@ -75,25 +94,24 @@ export default {
 
 			this.metaForm = { ...tempForm };
 		},
-		getProgramData (programData = {}) {
+		getProgramFormData (programData: IProgram): IProgramForm {
 			// Note: formation(fr)/ training(en)
-			if (!Object.keys(programData || {}).length) return {};
+			if (!Object.keys(programData || {}).length) return {} as IProgramForm;
 
-			programData = structuredClone(programData);
-			if (programData.brochure) {
-				programData.brochure = {
+			let programForm: IProgramForm = structuredClone(programData) as IProgramForm;
+			if (programForm.brochure) {
+				programForm.brochure = {
 					...programData.brochure,
-					name: programData.brochure.fileName
-				}
+					name: programData.brochure?.fileName
+				} as IProgramForm['brochure'];
 			}
 
-			return { ...programData };
+			return { ...programForm };
 		},
-		async submitMainForm (form = {}) {
-			if (!Object.keys(form || {}).length) return false;
+		async submitMainForm (form:Partial<IProgramForm> = {}): Promise<void> {
+			if (!Object.keys(form || {}).length) return;
 
 			const vm = this;
-
 			try {
 				vm.loading = true;
 				form = structuredClone(form);
@@ -120,11 +138,11 @@ export default {
 				vm.loading = false;
 			}
 		},
-		async submitMeta (val = {}) {
+		async submitMeta (val:{[key:string]:any} = {}) {
 			const vm = this;
 			vm.loading = true;
 			try {
-				const obj = {};
+				const obj:any = {};
 				for (const key of Object.keys(val)) {
 					obj[key] = val[key]?.content;
 				}
@@ -144,5 +162,5 @@ export default {
 			vm.loading = false;
 		},
 	},
-};
+});
 </script>

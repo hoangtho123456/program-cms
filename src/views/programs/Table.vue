@@ -10,8 +10,6 @@
 			actionEdit
 			colAction
 			@onAction="onAction"
-			@onChangeFilterColumn="onChangeFilterColumn"
-			@onChangePagination="onChangePagination"
 		>
 			<template v-slot:actions-box>
 				<v-btn
@@ -32,7 +30,8 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import i18n from '@/locale';
 import {
   BOOLEAN_TYPES,
@@ -46,7 +45,14 @@ import TableSearchFilter from '@/components/TableModule/TableSearchFilter.vue';
 import TableModule from '@/components/TableModule/index.vue';
 import TablePagination from '@/components/TableModule/Pagination.vue';
 
-export default {
+declare module 'vue/types/vue' {
+  interface Vue {
+    mixinQuery: Objects.IRequestQuery
+  }
+}
+
+export default Vue.extend({
+	name: 'Table',
 	mixins: [mixinRequest],
 	components: {
 		TableSearchFilter,
@@ -65,7 +71,7 @@ export default {
 		loading: false,
 	}),
 	computed: {
-		headers() {
+		headers(): object[] {
 			return [
 				{
 					name: i18n.t('program.columns.programName'),
@@ -144,31 +150,29 @@ export default {
 				}
 			];
 		},
-		booleanTypes () {
+		booleanTypes (): BooleanType[] {
 			return [...BOOLEAN_TYPES];
 		},
-		languages () {
+		languages (): LangType[] {
 			return [...LANGUAGES];
 		},
-		formats () {
+		formats (): any[] {
       return [...FORMAT_LIST];
 		},
-		programCates () {
+		programCates (): any[] {
 			return this.$store.getters.getList('programCateList');
 		},
-		entityServices () {
+		entityServices (): object {
 			return ProgramService;
 		},
 	},
 	methods: {
-		createProgram () {
+		createProgram (): void {
 			this.$router.push({
 				name: routesNames.program.add
 			});
 		},
-		onChangePagination (val) {},
-		onChangeFilterColumn (key, val) {},
-		async onAction(obj) {
+		async onAction(obj: { type: string, item: any }): Promise<void> {
 			if (obj.type === 'edit') {
 				this.$router.push({
 					name: routesNames.program.edit,
@@ -177,5 +181,5 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>

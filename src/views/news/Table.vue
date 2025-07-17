@@ -31,7 +31,8 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import i18n from '@/locale';
 import routesNames from "@/router/routesNames";
 import NewsService from '@/services/NewsService';
@@ -40,7 +41,17 @@ import TableSearchFilter from '@/components/TableModule/TableSearchFilter.vue';
 import TableModule from '@/components/TableModule/index.vue';
 import TablePagination from '@/components/TableModule/Pagination.vue';
 
-export default {
+declare module 'vue/types/vue' {
+  interface Vue {
+		updateApiQuery: Function,
+  }
+}
+
+interface TableInstance extends Vue {
+  setPageParams(res: Object): void;
+}
+
+export default Vue.extend({
 	mixins: [mixinRequest],
 	components: {
 		TableSearchFilter,
@@ -60,7 +71,7 @@ export default {
 		loading: false,
 	}),
 	computed: {
-		headers() {
+		headers(): any[] {
 			return [
 				{
 					name: i18n.t('date.date'),
@@ -101,15 +112,19 @@ export default {
 		}
 	},
 	methods: {
-		onSearch(items) {
+		onSearch(items: Objects.IRequestQuery): void {
 			this.updateApiQuery({ ...items });
 			this.getData();
 		},
-		onChangePagination(val) {
+		onChangePagination(val:number): void {
 			this.updateApiQuery({ page: val });
+			console.log(val);
 			this.getData();
 		},
-		async makeAction(obj) {
+		async makeAction(obj: {
+			type: string,
+			item: any
+		}) {
 			if (obj.type === 'edit') {
 				this.$router.push({ name: 'NewsEdit', params: { id: obj.item.id } });
 			} else if (obj.type === 'delete') {
@@ -127,7 +142,8 @@ export default {
 			const res = await NewsService.list(query);
 			if (res) {
 				this.columns = res.list;
-				this.$refs.tableRef?.setPageParams(res);
+				const tableRef = this.$refs.tableRef as TableInstance;
+				tableRef?.setPageParams(res);
 			}
 			this.$store.commit('SET_TOTAL_NUMBER', res?.total || 0);
 			this.loading = false;
@@ -136,5 +152,5 @@ export default {
 	mounted() {
 		this.getData();
 	},
-};
+});
 </script>

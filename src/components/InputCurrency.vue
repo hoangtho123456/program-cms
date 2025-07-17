@@ -18,8 +18,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue, { PropType } from 'vue';
+
+export default Vue.extend({
   props: {
     value: {},
     label: {
@@ -27,11 +29,11 @@ export default {
       default: '',
     },
     rules: {
-      type: Array,
+      type: Array as PropType<any[]>,
       default: () => [],
     },
     disabled: {
-      type: Boolean,
+      type: Boolean as PropType<Boolean>,
       default: false,
     },
     placeholder: {
@@ -45,11 +47,11 @@ export default {
   },
   computed: {
     num: {
-      get() {
+      get():string {
         return this.parseCurrency(this.value);
       },
-      set(val = '') {
-        let amount = val;
+      set(val:string = ''): void {
+        let amount:string | number = val;
         if (val) {
           amount = parseInt(val.replaceAll('.', ''));
         }
@@ -57,5 +59,5 @@ export default {
       },
     },
   }
-}
+});
 </script>

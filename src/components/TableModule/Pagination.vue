@@ -47,6 +47,7 @@ export default {
   },
   computed: {
     itemRange () {
+      console.log(this.page, this.limit);
       const start = (this.page - 1) * this.limit + 1;
       const end = Math.min(this.page * this.limit, this.amount);
 

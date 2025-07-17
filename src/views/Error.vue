@@ -16,15 +16,17 @@
   </app-center>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue, { PropType } from 'vue';
+
+export default Vue.extend({
   name: 'ErrorPage',
   props: {
     errorCode: {
-      type: Number,
+      type: Number as PropType<number>,
       default: 404,
     },
   },
   data: () => ({}),
-};
+});
 </script>

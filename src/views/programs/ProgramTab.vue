@@ -28,22 +28,23 @@
 	</v-tabs>
 </template>
 
-<script>
+<script lang="ts">
+import Vue, { PropType } from 'vue';
 import { isEmptyObject } from '@/utils';
 import IconCheck from '@/components/IconCheck.vue';
 import {
   description,
   presentation,
   prerequisite,
-} from './formCore';
+} from '@/views/programs/formCore';
 
-export default {
+export default Vue.extend({
 	components: {
 		IconCheck
 	},
 	props: {
 		value: {
-			type: Object,
+			type: Object as PropType<{}>,
 			default: () => ({}),
 		},
 		loading: {
@@ -72,12 +73,12 @@ export default {
 		},
 	},
 	methods: {
-		onSubmit(key, val) {
-			const obj = {};
+		onSubmit(key: string, val: any): void {
+			const obj:any = {};
 			obj[key] = val || {};
 			this.$emit('onSubmit', obj);
 		},
-		hasDataOnTab(tab) {
+		hasDataOnTab(tab: any[]): boolean {
 			if (tab) {
 				for (const i in tab) {
 					const item = tab[i];
@@ -92,7 +93,7 @@ export default {
 			return true;
 		},
 	},
-};
+});
 </script>
 <style lang="scss" scoped>
 @use "sass:map";
