@@ -15,21 +15,22 @@
 		</div>
 	</div>
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import { hasResponseError } from '@/utils';
 import JobCandidateService from '@/services/JobCandidateService.js';
 import CandidateForm from '@/components/forms/CandidateForm.vue';
 
-export default {
+export default Vue.extend({
 	components: {
 		CandidateForm
 	},
 	data: () => ({
 		loading: false,
-		mainForm: {},
+		mainForm: {} as Record<string, any>,
 	}),
 	computed: {
-		actions () {
+		actions (): Record<string, string> {
 			return {
 				add: 'add',
 				update: 'update'
@@ -50,11 +51,11 @@ export default {
 		},
 	},
 	methods: {
-		onCancel() {
+		onCancel (): void {
 			this.$router.go(-1);
 		},
-		async onSubmit(val = {}) {
-			if (!Object.keys(val || {}).length) return false;
+		async onSubmit(val: Record<string, any> = {}): Promise<void> {
+			if (!Object.keys(val || {}).length) return;
 
 			const vm = this;
 			try {
@@ -78,5 +79,5 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>

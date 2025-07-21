@@ -105,15 +105,22 @@
 		</div>
 	</v-form>
 </template>
-
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import { mapMutations } from 'vuex';
 import { ROLES_AS_OBJ } from '@/utils/constant';
 import UserService from '@/services/UserService';
 import MultiAutocomplete from '@/components/MultiAutocomplete.vue';
 import LazySelectInput from '@/components/LazySelectInput.vue';
 
-const formIntial = {
+interface IForm {
+	id?: IDType;
+	firstName: string | NoneValue;
+	lastName: string | NoneValue;
+	email: string | NoneValue;
+	subRoles: number | NoneValue;
+}
+const formIntial: IForm = {
 	id: null,
 	firstName: null,
 	lastName: null,
@@ -121,7 +128,11 @@ const formIntial = {
 	subRoles: null,
 };
 
-export default {
+interface RefInstance extends Vue {
+	validate(): boolean;
+}
+
+export default Vue.extend({
 	components: {
 		LazySelectInput,
 		MultiAutocomplete,
@@ -138,7 +149,7 @@ export default {
 		errors: {},
 	}),
 	computed: {
-		roleList() {
+		roleList(): Record<string, any>[] {
 			return [
 				{
 					id: 1,
@@ -154,14 +165,14 @@ export default {
 				}
 			]
 		},
-		editing() {
+		editing(): boolean {
 			return !!this.form.id;
 		},
 	},
 	watch: {
 		'$route.params.id': {
 			immediate: true,
-			async handler(id) {
+			async handler(id: IDType): Promise<void> {
 				if (id) {
 					this.loadingShow();
 					const res = await UserService.detail(id);
@@ -181,19 +192,19 @@ export default {
 	},
 	methods: {
 		...mapMutations(['loadingShow','loadingHide']),
-		onCancel() {
+		onCancel(): void {
 			this.$router.go(-1);
 		},
-		async onSubmit() {
+		async onSubmit(): Promise<void> {
 			const vm = this;
 
-			if (!vm.$refs['formRef'].validate()) {
-				return false;
+			if (!(vm.$refs['formRef'] as RefInstance).validate()) {
+				return;
 			}
 
 			try {
 				vm.loading = true;
-				const form = { ...vm.form, ...vm.model };
+				const form:Record<string, any> = { ...vm.form, ...vm.model };
 				const action = vm.form.id ? 'update' : 'add';
 				if (action === 'update') {
 					if (!form.password) {
@@ -218,5 +229,5 @@ export default {
 			}
 		},
 	}
-};
+});
 </script>

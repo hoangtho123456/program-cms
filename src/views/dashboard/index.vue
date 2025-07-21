@@ -51,20 +51,21 @@
 		</v-col>
 	</v-row>
 </template>
-
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import { mapMutations } from 'vuex';
 import DashboardService from '@/services/DashboardService';
 import RadioGroup from '@/components/RadioGroup.vue';
 import TableSearchFilter from '@/components/TableModule/TableSearchFilter.vue';
 import TableModule from '@/components/TableModule/index.vue';
 
-const TABLE_KEYS = {
+type StaticKeys = 'program' | 'news';
+const TABLE_KEYS: Record<StaticKeys, string> = {
 	program: 'program',
 	news: 'news'
 };
 
-export default {
+export default Vue.extend({
 	name: 'DashboardPage',
 	components: {
 		RadioGroup,
@@ -81,10 +82,10 @@ export default {
 		selectedMode: TABLE_KEYS.program,
 	}),
 	computed: {
-		tableKeys () {
+		tableKeys (): Record<string, string> {
 			return { ...TABLE_KEYS };
 		},
-		headers () {
+		headers (): Record<string, any>[] {
 			let headerCols = [];
 			switch (this.selectedMode) {
 				case this.tableKeys.news:
@@ -160,12 +161,12 @@ export default {
 						}
 					];
 					break;
-				default: throw new Error('selected mode is invalid', this.selectedMode);
+				default: throw new Error('selected mode is invalid: ' + this.selectedMode);
 			}
 
 			return [...headerCols];
 		},
-		tableTypes () {
+		tableTypes (): Record<string, string>[] {
 			return [
 				{
 					id: this.tableKeys.program,
@@ -178,16 +179,17 @@ export default {
 		}
 	},
 	watch: {
-		selectedMode () {
+		selectedMode (): void {
 			this.getData();
 		},
 	},
 	methods: {
 		...mapMutations(['loadingShow','loadingHide']),
-		searchData (items) {
-			this.getData(items);
+		searchData (items: Objects.IRequestQuery): void {
+			this.filters = { ...this.filters, ...items };
+			this.getData();
 		},
-		async getData () {
+		async getData (): Promise<void> {
 			this.loadingShow();
 			this.loading = true;
 			this.items = [];
@@ -206,5 +208,5 @@ export default {
 	mounted () {
 		this.getData();
 	},
-};
+});
 </script>

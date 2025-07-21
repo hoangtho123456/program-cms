@@ -69,12 +69,12 @@
 		</div>
 	</v-app>
 </template>
-
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import Localization from '@/components/widget/AppLocalization.vue';
 
-export default {
-	name: 'SignUp',
+export default Vue.extend({
+	name: 'SignUpPage',
 	components: { Localization },
 	data: () => ({
 		loading: false,
@@ -86,12 +86,12 @@ export default {
 		},
 	}),
 	methods: {
-		login() {
+		login(): void {
 			this.loading = true;
 			setTimeout(() => {
 				this.$router.push('/signin');
 			}, 1000);
 		},
 	},
-};
+});
 </script>

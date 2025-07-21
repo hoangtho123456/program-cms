@@ -15,21 +15,24 @@
 		</div>
 	</div>
 </template>
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import { hasResponseError } from '@/utils';
 import OfferService from '@/services/OfferService.js';
 import OfferForm from '@/components/forms/OfferForm.vue';
 
-export default {
+export default Vue.extend({
 	components: {
 		OfferForm
 	},
 	data: () => ({
 		loading: false,
-		offerForm: {},
+		offerForm: {
+			id: null
+		},
 	}),
 	computed: {
-		actions () {
+		actions (): Record<string, string> {
 			return {
 				add: 'add',
 				update: 'update'
@@ -39,7 +42,7 @@ export default {
 	watch: {
 		'$route.params.id': {
 			immediate: true,
-			async handler (id) {
+			async handler (id: IDType) {
 				if (id) {
 					const res = await OfferService.detail(id);
 					if (res) {
@@ -50,11 +53,11 @@ export default {
 		},
 	},
 	methods: {
-		onCancel() {
+		onCancel(): void {
 			this.$router.go(-1);
 		},
-		async onSubmit(val = {}) {
-			if (!Object.keys(val || {}).length) return false;
+		async onSubmit(val: Record<string, any> = {}): Promise<void> {
+			if (!Object.keys(val || {}).length) return;
 
 			const vm = this;
 			try {
@@ -78,5 +81,5 @@ export default {
 			}
 		},
 	},
-};
+});
 </script>

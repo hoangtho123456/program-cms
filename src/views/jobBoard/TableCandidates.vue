@@ -38,7 +38,8 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import i18n from '@/locale';
 import mixinRequest from '@/mixins/requestQuery';
 import routesNames from "@/router/routesNames";
@@ -47,7 +48,11 @@ import TableSearchFilter from '@/components/TableModule/TableSearchFilter.vue';
 import TableModule from '@/components/TableModule/index.vue';
 import TablePagination from '@/components/TableModule/Pagination.vue';
 
-export default {
+interface TableInstance extends Vue {
+	setPageParams(res: Record<string, any>): void;
+}
+
+export default Vue.extend({
 	mixins: [mixinRequest],
 	components: {
 		TableSearchFilter,
@@ -76,7 +81,7 @@ export default {
 		loading: false,
 	}),
 	computed: {
-		headers() {
+		headers(): Record<string, any>[] {
 			return [
 				{
 					name: i18n.t('date.applicationDate'),
@@ -133,15 +138,15 @@ export default {
 		},
 	},
 	methods: {
-		onSearch(items) {
+		onSearch(items: Record<string, any>): void {
 			this.updateApiQuery({ ...items });
 			this.getData();
 		},
-		onChangePagination (val) {
+		onChangePagination (val: number): void {
 			this.updateApiQuery({ page: val });
 			this.getData();
 		},
-		async onAction(obj) {
+		async onAction(obj: Record<string, any>): Promise<void> {
 			if (obj.type === 'edit') {
 				this.$router.push({ name: routesNames.jobBoard.editCandidate, params: { id: obj.item.id } });
 			} else if (obj.type === 'delete') {
@@ -157,7 +162,9 @@ export default {
 			const query = this.mixinQuery;
 			const res = await JobCandidateService.list(query);
 			this.columns = res.list;
-			this.$refs.tableRef?.setPageParams(res);
+
+			const tableRef = this.$refs.tableRef as TableInstance;
+			tableRef?.setPageParams(res);
 			this.$store.commit('SET_TOTAL_NUMBER', res?.total || 0);
 			this.loading = false;
 		},
@@ -170,5 +177,5 @@ export default {
 	async mounted() {
 		this.getData();
 	},
-};
+});
 </script>

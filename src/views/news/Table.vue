@@ -48,7 +48,7 @@ declare module 'vue/types/vue' {
 }
 
 interface TableInstance extends Vue {
-  setPageParams(res: Object): void;
+  setPageParams(res: Object): void
 }
 
 export default Vue.extend({
@@ -123,8 +123,8 @@ export default Vue.extend({
 		},
 		async makeAction(obj: {
 			type: string,
-			item: any
-		}) {
+			item: Record<string, any>,
+		}): Promise<void> {
 			if (obj.type === 'edit') {
 				this.$router.push({ name: 'NewsEdit', params: { id: obj.item.id } });
 			} else if (obj.type === 'delete') {

@@ -1,10 +1,12 @@
 import i18n from '@/locale';
 
+type AnyObj =  Record<string, any>;
+
 /**
  * Meta data form
  */
 type MetaKeys = 'description' | 'presentation' | 'prerequisite';
-type MetaFormType = Record<MetaKeys, {}>;
+type MetaFormType = Record<MetaKeys, AnyObj>;
 export const META_FORM: MetaFormType = {
 	description: {
 		content: '',
@@ -17,7 +19,7 @@ export const META_FORM: MetaFormType = {
 	},
 };
 
-export const description:object = {
+export const description:AnyObj = {
 	entity: {
 		content: null,
 	},
@@ -30,7 +32,7 @@ export const description:object = {
 	],
 };
 
-export const presentation:object = {
+export const presentation:AnyObj = {
 	entity: {
 		content: null,
 	},
@@ -43,7 +45,7 @@ export const presentation:object = {
 	],
 };
 
-export const prerequisite:object = {
+export const prerequisite:AnyObj = {
 	entity: {
 		content: null,
 	},

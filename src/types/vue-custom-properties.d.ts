@@ -8,5 +8,7 @@ declare module 'vue/types/vue' {
     $router: VueRouter,
     parseCurrency: (val: number | NoneValue | unknown) => string,
     $t: VueI18n['t'],
+    $i18n: VueI18n,
+    $route: Route,
   }
 }

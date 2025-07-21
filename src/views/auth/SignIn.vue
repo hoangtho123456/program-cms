@@ -61,10 +61,15 @@
 		</div>
 	</v-app>
 </template>
+<script lang="ts">
+import Vue from 'vue';
 
-<script>
-export default {
-	name: 'SingIn',
+interface refInstance extends Vue {
+	validate(): boolean;
+}
+
+export default Vue.extend({
+	name: 'SignInPage',
 	data: () => ({
 		loading: false,
 		showedPassword: false,
@@ -91,7 +96,8 @@ export default {
 	methods: {
 		async login() {
 			const vm = this;
-			if (vm.$refs['formRef'].validate()) {
+			const formRef = vm.$refs['formRef'] as refInstance;
+			if (formRef.validate()) {
 				vm.loading = true;
 				const res = await vm.$store.dispatch('loginByEmail', {
 					email: vm.model.email,
@@ -110,5 +116,5 @@ export default {
 			this.$router.push('/signup');
 		}
 	},
-};
+});
 </script>

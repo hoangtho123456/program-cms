@@ -35,8 +35,8 @@
 		</TableModule>
 	</div>
 </template>
-
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import i18n from '@/locale';
 import UserService from '@/services/UserService.js';
 import mixinRequest from '@/mixins/requestQuery';
@@ -44,7 +44,17 @@ import TableSearchFilter from '@/components/TableModule/TableSearchFilter.vue';
 import TableModule from '@/components/TableModule/index.vue';
 import TablePagination from '@/components/TableModule/Pagination.vue';
 
-export default {
+declare module 'vue/types/vue' {
+	interface Vue {
+		deleteQueryParam: (key: string) => void;
+	}
+}
+
+interface TableInstance extends Vue {
+	setPageParams(res: Record<string, any>): void;
+}
+
+export default Vue.extend({
 	mixins: [mixinRequest],
 	components: {
 		TableSearchFilter,
@@ -75,7 +85,7 @@ export default {
 		locationList: [],
 	}),
 	computed: {
-		headers() {
+		headers(): Record<string, any>[] {
 			return [
 				{
 					name: i18n.t('date.creationDate'),
@@ -112,20 +122,20 @@ export default {
 				},
 			];
 		},
-		userRoles() {
+		userRoles(): Record<string, any>[] {
 			return this.$store.getters.getList('userRoles');
 		},
 	},
 	methods: {
-		onSearch(items) {
+		onSearch(items: Record<string, any>): void {
 			this.updateApiQuery({ ...items });
 			this.getData();
 		},
-		onChangePagination (val) {
+		onChangePagination (val: number) {
 			this.updateApiQuery({ page: val });
 			this.getData();
 		},
-		onChangeFilterColumn (key, val) {
+		onChangeFilterColumn (key: string, val: any): void {
 			if (!val) {
 				this.deleteQueryParam(key);
 			} else {
@@ -133,7 +143,7 @@ export default {
 			}
 			this.getData();
 		},
-		async onAction(obj) {
+		async onAction(obj: Record<string, any>): Promise<void> {
 			if (obj.type === 'edit') {
 				this.$router.push(`/admin/${obj.item.id}`);
 			} else if (obj.type === 'delete') {
@@ -150,7 +160,8 @@ export default {
 			const res = await UserService.list(query);
 			if (res) {
 				this.columns = res.list;
-				this.$refs.tableRef?.setPageParams(res);
+				const tableRef = this.$refs.tableRef as TableInstance;
+				tableRef?.setPageParams(res);
 			}
 			this.loading = false;
 		},
@@ -158,5 +169,5 @@ export default {
 	mounted() {
 		this.getData();
 	},
-};
+});
 </script>

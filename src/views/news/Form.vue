@@ -75,13 +75,22 @@
 	</v-form>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue';
 import NewsService from '@/services/NewsService.js';
 import MultiUpload from '@/components/FileUpload/MultiUpload.vue';
 import MultiAutocomplete from '@/components/MultiAutocomplete.vue';
 import LazySelectInput from '@/components/LazySelectInput.vue';
 
-const formIntial = {
+interface IForm {
+	id?: IDType;
+	title: string | NoneValue;
+	description: string | NoneValue;
+	content: string | NoneValue;
+	media: File | NoneValue;
+	createdDate: Date | NoneValue;
+}
+const formIntial:IForm = {
 	title: null,
 	description: null,
 	content: null,
@@ -89,31 +98,37 @@ const formIntial = {
 	createdDate: new Date(),
 };
 
-export default {
+interface RefInstance extends Vue {
+  validate(): boolean;
+	isRequired(): boolean;
+}
+
+export default Vue.extend({
+	name: 'NewsDetail',
 	components: {
 		MultiUpload,
 		MultiAutocomplete,
 		LazySelectInput,
 	},
-	name: 'NewsDetail',
 	data: () => ({
 		loading: false,
 		form: { ...formIntial },
 	}),
 	methods: {
-		onCancel() {
+		onCancel(): void {
 			this.$router.go(-1);
 		},
-		async onSubmit() {
+		async onSubmit(): Promise<void> {
 			const vm = this;
 
+			const $ref = vm.$refs['formRef'] as RefInstance;
 			try {
-				if (!vm.$refs['formRef'].validate()) {
-					return false;
+				if (!$ref.validate()) {
+					return;
 				}
 
-				if (!ck?.isRequired()) return false;
-				const ck = this.$refs.ckeditor;
+				const ck = this.$refs.ckeditor as RefInstance;
+				if (!ck?.isRequired()) return;
 
 				vm.loading = true;
 				const action = vm.form.id ? 'update' : 'add';
@@ -143,5 +158,5 @@ export default {
 			},
 		},
 	},
-};
+});
 </script>
